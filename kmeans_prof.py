@@ -176,13 +176,13 @@ def repeatedKMeans(instances, k, n):
     bestClustering = {}
     bestClustering["withinss"] = float("inf")
     for i in range(1, n+1):
-        print(f"k-means trial {i}", sep = ',')
+        print "k-means trial %d," % i ,
         trialClustering = kmeans(instances, k)
-        print("withinss: %.1f" % trialClustering["withinss"])
+        print "withinss: %.1f" % trialClustering["withinss"]
         if trialClustering["withinss"] < bestClustering["withinss"]:
             bestClustering = trialClustering
             minWithinssTrial = i
-    print("Trial with minimum withinss:", minWithinssTrial)
+    print "Trial with minimum withinss:", minWithinssTrial
     return bestClustering
 
 
@@ -197,7 +197,7 @@ def printTable(instances):
             line = instance[0] + "\t"
             for i in range(1, len(instance)):
                 line += "%.2f " % instance[i]
-            print(line)
+            print line
 
 def extractAttribute(instances, index):
     result = []
@@ -340,7 +340,7 @@ def paintClusters2D(canvas, clusters, centroids, title=""):
 # Test code
 ######################################################################
 
-dataset = loadCSV("/Users/yanjiefu/Downloads/tshirts-G.csv")
+dataset = loadCSV("./datasets/kmeans_data/data.csv")
 showDataset2D(dataset)
 clustering = kmeans(dataset, 3, True)
 printTable(clustering["centroids"])
