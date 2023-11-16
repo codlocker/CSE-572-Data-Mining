@@ -5,3 +5,5 @@ Deep_EDA_Kaggle_SleepData.ipynb
 .vscode
 __pycache__
 __pycache__/*
+datasets/
+datasets/*
